@@ -11,7 +11,7 @@
 
 #define PORT 5050
 #define SERVER_IP_ADDR "127.0.0.1"
-#define BUF_SIZE 100
+#define BUF_SIZE 256
 #define UUID_SIZE_FOR_STR 32
 #define FILE_BUF_SIZE 1024
 

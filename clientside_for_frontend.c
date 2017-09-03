@@ -30,10 +30,14 @@ char* client_send_json_file_and_get_uuid(char* filename){
         send(sfd, sendbuffer, b, 0);
     }
 
+    char* uuid_str = malloc(UUID_SIZE_FOR_STR);
+    if((b = recv(sfd, uuid_str, UUID_SIZE_FOR_STR, 0)) < 0) {printf("EROR: Reciving UUID");}
+
+    printf("UUID for the file->%s\n", uuid_str);
+
     fclose(fp);
-    char* temp = "Return";
     
-    return temp;
+    return uuid_str;
 }
 
 int main(int argc, char** argv){
